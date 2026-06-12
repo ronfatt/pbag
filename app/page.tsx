@@ -3,6 +3,7 @@ import { Contact } from "@/components/Contact";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { ImpactUpdates } from "@/components/ImpactUpdates";
+import { LatestFacebook } from "@/components/LatestFacebook";
 import { Navbar } from "@/components/Navbar";
 import { Programs } from "@/components/Programs";
 import { Sponsor } from "@/components/Sponsor";
@@ -19,6 +20,7 @@ export default function Home() {
       <Sponsor />
       <WaysToGive />
       <ImpactUpdates />
+      <LatestFacebook />
       <Testimonials />
       <Contact />
       <Footer />
