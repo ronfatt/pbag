@@ -13,7 +13,7 @@ export function Testimonials() {
             <h2 className="mt-3 text-4xl font-black tracking-normal text-[#263128] sm:text-5xl">Volunteer Testimonials</h2>
           </div>
           <div className="relative aspect-[16/8] overflow-hidden rounded-lg shadow-xl">
-            <Image src="/images/volunteers.jpg" alt="PBAG volunteers with students" fill className="object-cover" sizes="(min-width: 1024px) 60vw, 100vw" />
+            <Image src="/images/baking-volunteers.jpg" alt="PBAG volunteers and students after a baking skills session" fill className="object-cover" sizes="(min-width: 1024px) 60vw, 100vw" />
           </div>
         </SectionReveal>
 

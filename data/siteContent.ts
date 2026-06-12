@@ -126,29 +126,29 @@ export const updates = [
     title: "SUHAKAM Visit To PBAG",
     date: "30 October 2025",
     description:
-      "The Human Rights Commission of Malaysia visited PBAG to better understand the centre's mission, challenges, and the children it serves.",
-    image: "/images/school-building.jpg"
+      "The Human Rights Commission of Malaysia, led by Commissioner Dr. Zufar Yadi, visited PBAG for a fact-finding session on the centre's work, operational challenges, and the realities faced by children born and raised in Sabah without formal documentation.",
+    image: "/images/suhakam-visit.jpg"
   },
   {
     title: "Preschool Curriculum 2026 Workshop",
     date: "10-13 November 2025",
     description:
-      "PBAG teachers joined the Preschool Curriculum 2026 workshop with district trainers in Tawau to strengthen early childhood education quality.",
-    image: "/images/classroom-learning.jpg"
+      "Three teachers from Tadika Alternatif Grace joined around 129 preschool teachers at SJKC Sin Hwa, Tawau, learning new approaches for the 2026 curriculum and strengthening early childhood teaching quality.",
+    image: "/images/preschool-workshop-2026.jpg"
   },
   {
     title: "Medical Camp For The Community",
-    date: "Community care",
+    date: "22 November 2025",
     description:
-      "Doctors, teachers, and volunteers provided medical services for parents, students, and adults in the community.",
-    image: "/images/medical-camp.jpg"
+      "Doctors, teachers, and volunteers gave their time to provide free medical services for parents, students, and adults in the surrounding Tawau community.",
+    image: "/images/medical-camp-community.jpg"
   },
   {
     title: "Free Measles-Rubella Vaccination Program",
     date: "4 December 2025",
     description:
-      "A free vaccination program for children aged 5 and above was held at PBAG with support from WHO and National Cancer Society Malaysia.",
-    image: "/images/vaccination-program.jpg"
+      "A free measles-rubella vaccination program for children aged 5 and above was held at PBAG, organized by WHO and implemented by National Cancer Society Malaysia with Dr. Nadia and a dedicated nursing team.",
+    image: "/images/measles-rubella-vaccination.jpg"
   }
 ];
 
