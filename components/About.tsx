@@ -13,7 +13,10 @@ export function About() {
               About Pusat Bimbingan Alternatif Grace
             </h2>
             <p className="mt-6 text-lg leading-8 text-[#56645a]">
-              Pusat Bimbingan Alternatif Grace (PBAG), also known as Grace Training Centre, is an alternative education centre in Tawau, Sabah. PBAG serves undocumented children who face limited access to formal education. Through education, skills training, and community support, PBAG helps children grow into responsible and capable individuals.
+              Pusat Bimbingan Alternatif Grace (PBAG), also known as Grace Training Centre, is located at Mile 5.5 Jalan Apas, Tawau. Registered by the Ministry of Education in Putrajaya on 15 June 2015, PBAG provides alternative education for undocumented children who face limited access to formal schooling.
+            </p>
+            <p className="mt-4 text-lg leading-8 text-[#56645a]">
+              Since its beginning, PBAG has served hundreds of children. In 2023, student numbers grew by 70% to 728 students, with many more still waiting for a place. Through education, skills training, and community support, PBAG helps children grow into responsible and capable individuals.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-lg border border-[#e8ddc7] bg-white p-6 shadow-sm">
