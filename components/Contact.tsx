@@ -1,4 +1,4 @@
-import { Globe2, MapPinned, MessageCircle, Share2 } from "lucide-react";
+import { Globe2, MessageCircle, Share2 } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
 import { contact } from "@/data/siteContent";
 
@@ -47,12 +47,16 @@ export function Contact() {
               <p><strong className="text-[#263128]">Address:</strong><br />{contact.address}</p>
               <p><strong className="text-[#263128]">P.O. Box:</strong><br />{contact.poBox}</p>
             </div>
-            <div className="mt-6 flex min-h-[260px] items-center justify-center rounded-lg border border-dashed border-[#cdbf9f] bg-[#fffaf0] p-6 text-center">
-              <div>
-                <MapPinned className="mx-auto text-[#d9342b]" size={36} />
-                <p className="mt-4 text-lg font-black text-[#263128]">Google Map Embed Placeholder</p>
-                <p className="mt-2 text-sm font-semibold leading-6 text-[#66746a]">Replace this block with a map embed for PBAG, Tawau.</p>
-              </div>
+            <div className="mt-6 overflow-hidden rounded-lg border border-[#e8ddc7] bg-[#fffaf0] shadow-sm">
+              <iframe
+                title="Pusat Bimbingan Alternatif Grace location map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3978.816823308398!2d117.94987957666143!3d4.255854845349864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3215774cebea0bbb%3A0x30c42237a760b2d0!2sPusat%20Bimbingan%20Alternatif%20Grace!5e0!3m2!1sen!2smy!4v1781263276063!5m2!1sen!2smy"
+                className="block aspect-[4/3] w-full md:aspect-[16/10]"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+              />
             </div>
           </div>
         </SectionReveal>
