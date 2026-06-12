@@ -17,13 +17,16 @@ export function Hero() {
       <div className="section-shell relative z-10 flex min-h-[760px] flex-col justify-center pb-36 pt-28">
         <div className="max-w-3xl">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-bold backdrop-blur">
-            <HeartHandshake size={17} /> Grace Training Centre, Tawau
+            <HeartHandshake size={17} /> MOE-registered since 15 June 2015
           </p>
           <h1 className="max-w-4xl text-5xl font-black leading-[1.02] tracking-normal sm:text-6xl lg:text-7xl">
             Give Every Child A Chance To Learn
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-white/88 sm:text-xl">
             PBAG provides alternative education for undocumented children in Tawau, helping them build confidence, skills, and a better future.
+          </p>
+          <p className="mt-4 max-w-2xl text-sm font-bold uppercase tracking-[0.16em] text-[#f4bd45]">
+            Sponsor from RM700/year or give any amount today
           </p>
           <div className="mt-9 flex flex-col gap-4 sm:flex-row">
             <a

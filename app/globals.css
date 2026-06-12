@@ -40,6 +40,10 @@ body {
   width: min(1120px, calc(100% - 32px));
 }
 
+.section-y {
+  padding-block: clamp(4.5rem, 7vw, 6rem);
+}
+
 .focus-ring {
   outline: 2px solid transparent;
   outline-offset: 3px;

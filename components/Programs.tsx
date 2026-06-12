@@ -162,7 +162,7 @@ export function Programs() {
   }
 
   return (
-    <section id="programs" className="bg-[#fffaf0] py-24">
+    <section id="programs" className="section-y bg-[#fffaf0]">
       <div className="section-shell">
         <SectionReveal className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
           <div>

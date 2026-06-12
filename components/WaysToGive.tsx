@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Check, Copy, QrCode } from "lucide-react";
+import { Check, Copy, MessageCircle, QrCode } from "lucide-react";
 import { useState } from "react";
 import { SectionReveal } from "@/components/SectionReveal";
 import { donation, givingOptions } from "@/data/siteContent";
@@ -9,6 +9,7 @@ import { donation, givingOptions } from "@/data/siteContent";
 export function WaysToGive() {
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
+  const quickAmounts = ["RM50", "RM100", "RM300", "RM700", "RM1000"];
 
   async function copyAccountNumber() {
     const accountNumber = donation.accountNo.replaceAll(" ", "");
@@ -38,7 +39,7 @@ export function WaysToGive() {
   }
 
   return (
-    <section id="give" className="bg-white py-24">
+    <section id="give" className="section-y bg-white">
       <div className="section-shell">
         <SectionReveal className="max-w-3xl">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">Ways to give</p>
@@ -59,10 +60,21 @@ export function WaysToGive() {
           ))}
         </div>
 
-        <SectionReveal className="mt-12 grid gap-8 rounded-lg bg-[#113f25] p-6 text-white shadow-2xl md:p-8 lg:grid-cols-[1.05fr_0.95fr]">
+        <SectionReveal className="mt-10 grid gap-8 rounded-lg bg-[#113f25] p-6 text-white shadow-2xl md:p-8 lg:grid-cols-[1fr_0.85fr]">
           <div>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#f4bd45]">Donation details</p>
-            <h3 className="mt-3 text-3xl font-black">Mode of payment</h3>
+            <h3 className="mt-3 text-3xl font-black">Give in the way that works for you</h3>
+            <div className="mt-6 flex flex-wrap gap-3">
+              {quickAmounts.map((amount) => (
+                <a
+                  key={amount}
+                  href="#contact"
+                  className="focus-ring rounded-full border border-white/18 bg-white/10 px-4 py-3 text-sm font-black text-white transition hover:-translate-y-0.5 hover:border-[#f4bd45] hover:bg-[#f4bd45] hover:text-[#263128]"
+                >
+                  {amount}
+                </a>
+              ))}
+            </div>
             <dl className="mt-7 grid gap-4 text-sm">
               <div className="rounded-lg bg-white/10 p-4">
                 <dt className="font-bold text-white/68">Cash</dt>
@@ -87,6 +99,14 @@ export function WaysToGive() {
                   {copied ? <Check size={17} /> : <Copy size={17} />}
                   {copied ? "Copied" : copyFailed ? "Copy unavailable" : "Copy Account Number"}
                 </button>
+                <a
+                  href="https://wa.me/60198088281"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="focus-ring ml-0 mt-3 inline-flex items-center gap-2 rounded-full border border-[#138a3d]/20 px-4 py-3 text-sm font-black text-[#138a3d] transition hover:bg-[#eef8ef] sm:ml-2"
+                >
+                  <MessageCircle size={17} /> WhatsApp after donation
+                </a>
               </div>
               <div className="rounded-lg bg-white/10 p-4">
                 <dt className="font-bold text-white/68">International Transfer</dt>
@@ -102,6 +122,9 @@ export function WaysToGive() {
             <div className="relative mx-auto mt-5 aspect-[3/4] w-full max-w-[300px] overflow-hidden rounded-lg bg-white shadow-lg">
               <Image src="/images/qr-donation.png" alt="PBAG DuitNow donation QR code" fill className="object-contain p-2" sizes="300px" />
             </div>
+            <p className="mx-auto mt-5 max-w-sm text-sm font-semibold leading-6 text-[#66746a]">
+              After transferring, send the receipt by WhatsApp so PBAG can acknowledge your support.
+            </p>
           </div>
         </SectionReveal>
       </div>

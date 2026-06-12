@@ -5,7 +5,7 @@ import { testimonials } from "@/data/siteContent";
 
 export function Testimonials() {
   return (
-    <section id="volunteer" className="bg-white py-24">
+    <section id="volunteer" className="section-y bg-white">
       <div className="section-shell">
         <SectionReveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>

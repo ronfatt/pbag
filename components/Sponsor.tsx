@@ -4,7 +4,7 @@ import { sponsorships } from "@/data/siteContent";
 
 export function Sponsor() {
   return (
-    <section id="sponsor" className="bg-[#113f25] py-24 text-white">
+    <section id="sponsor" className="section-y bg-[#113f25] text-white">
       <div className="section-shell">
         <SectionReveal className="mx-auto max-w-3xl text-center">
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#f4bd45]">Sponsor a child</p>

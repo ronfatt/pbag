@@ -8,6 +8,7 @@ import { Navbar } from "@/components/Navbar";
 import { Programs } from "@/components/Programs";
 import { Sponsor } from "@/components/Sponsor";
 import { Testimonials } from "@/components/Testimonials";
+import { TrustTransparency } from "@/components/TrustTransparency";
 import { WaysToGive } from "@/components/WaysToGive";
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
       <Programs />
       <Sponsor />
       <WaysToGive />
+      <TrustTransparency />
       <ImpactUpdates />
       <LatestFacebook />
       <Testimonials />

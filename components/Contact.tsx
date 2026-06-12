@@ -4,7 +4,7 @@ import { contact } from "@/data/siteContent";
 
 export function Contact() {
   return (
-    <section id="contact" className="bg-[#fffaf0] py-24">
+    <section id="contact" className="section-y bg-[#fffaf0]">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <SectionReveal>
           <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d9342b]">Visit / Contact</p>

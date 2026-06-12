@@ -5,7 +5,7 @@ import { whyCards } from "@/data/siteContent";
 export function About() {
   return (
     <>
-      <section id="about" className="bg-[#fffaf0] py-24">
+      <section id="about" className="section-y bg-[#fffaf0]">
         <div className="section-shell grid items-center gap-12 lg:grid-cols-[1.05fr_0.95fr]">
           <SectionReveal>
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#d9342b]">About PBAG</p>
@@ -41,7 +41,7 @@ export function About() {
         </div>
       </section>
 
-      <section id="why" className="bg-white py-24">
+      <section id="why" className="section-y bg-white">
         <div className="section-shell">
           <SectionReveal className="max-w-3xl">
             <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">Why it matters</p>

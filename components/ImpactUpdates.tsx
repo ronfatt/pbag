@@ -4,7 +4,7 @@ import { updates } from "@/data/siteContent";
 
 export function ImpactUpdates() {
   return (
-    <section id="impact" className="bg-[#fffaf0] py-24">
+    <section id="impact" className="section-y bg-[#fffaf0]">
       <div className="section-shell">
         <SectionReveal className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
           <div>

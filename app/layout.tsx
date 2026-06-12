@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://pbag.vercel.app"),
   title: "PBAG Grace Training Centre | Sponsor Education in Tawau",
   description:
     "Support Pusat Bimbingan Alternatif Grace, an alternative education centre in Tawau helping undocumented children learn, grow, and build a better future.",
@@ -30,7 +31,22 @@ export const metadata: Metadata = {
       "Sponsor or donate to PBAG and help undocumented children in Tawau receive education, skills training, and community care.",
     type: "website",
     locale: "en_MY",
-    siteName: "Pusat Bimbingan Alternatif Grace"
+    siteName: "Pusat Bimbingan Alternatif Grace",
+    images: [
+      {
+        url: "/images/hero-students.jpg",
+        width: 1135,
+        height: 1280,
+        alt: "PBAG students in Tawau"
+      }
+    ]
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "PBAG Grace Training Centre | Sponsor Education in Tawau",
+    description:
+      "Support PBAG's alternative education centre for undocumented children in Tawau, Sabah.",
+    images: ["/images/hero-students.jpg"]
   }
 };
 
