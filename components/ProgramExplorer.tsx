@@ -137,6 +137,7 @@ const categories = Object.keys(categoryMeta) as ProgramCategory[];
 export function ProgramExplorer() {
   const [activeCategory, setActiveCategory] = useState<ProgramCategory>("All");
   const [selectedTitle, setSelectedTitle] = useState("Culinary Skills");
+  const [showAllPrograms, setShowAllPrograms] = useState(false);
 
   const filteredPrograms = useMemo(() => {
     if (activeCategory === "All") {
@@ -149,9 +150,12 @@ export function ProgramExplorer() {
   const selectedProgram =
     programs.find((program) => program.title === selectedTitle) ?? programs.find((program) => program.title === "Culinary Skills") ?? programs[0];
   const selectedDetails = programDetails[selectedProgram.title];
+  const visiblePrograms = showAllPrograms ? filteredPrograms : filteredPrograms.slice(0, 8);
+  const hiddenProgramCount = filteredPrograms.length - visiblePrograms.length;
 
   function chooseCategory(category: ProgramCategory) {
     setActiveCategory(category);
+    setShowAllPrograms(false);
     if (category !== "All") {
       const firstInCategory = programs.find((program) => programDetails[program.title]?.category === category);
       if (firstInCategory) {
@@ -225,34 +229,58 @@ export function ProgramExplorer() {
           </div>
         </div>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          {filteredPrograms.map((program) => {
-            const active = selectedProgram.title === program.title;
-            return (
-              <button
-                key={program.title}
-                type="button"
-                onClick={() => setSelectedTitle(program.title)}
-                className={`focus-ring group h-full w-full rounded-lg border p-5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
-                  active ? "border-[#138a3d] bg-[#eef8ef] shadow-lg" : "border-[#e8ddc7] bg-white hover:border-[#f4bd45]"
-                }`}
-                aria-pressed={active}
-              >
-                <div
-                  className={`mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full transition ${
-                    active ? "bg-[#138a3d] text-white" : "bg-[#fff4dc] text-[#138a3d] group-hover:bg-[#f4bd45]"
+        <div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {visiblePrograms.map((program) => {
+              const active = selectedProgram.title === program.title;
+              return (
+                <button
+                  key={program.title}
+                  type="button"
+                  onClick={() => setSelectedTitle(program.title)}
+                  className={`focus-ring group h-full w-full rounded-lg border p-5 text-left shadow-sm transition hover:-translate-y-1 hover:shadow-lg ${
+                    active ? "border-[#138a3d] bg-[#eef8ef] shadow-lg" : "border-[#e8ddc7] bg-white hover:border-[#f4bd45]"
                   }`}
+                  aria-pressed={active}
                 >
-                  <program.icon size={21} />
-                </div>
-                <h3 className="font-black text-[#263128]">{program.title}</h3>
-                <p className="mt-2 text-sm font-medium leading-6 text-[#66746a]">{program.description}</p>
-                <p className={`mt-4 text-xs font-black uppercase tracking-[0.14em] ${active ? "text-[#138a3d]" : "text-[#b49a6b]"}`}>
-                  {active ? "Currently featured" : "Tap to preview"}
-                </p>
+                  <div
+                    className={`mb-4 inline-flex h-11 w-11 items-center justify-center rounded-full transition ${
+                      active ? "bg-[#138a3d] text-white" : "bg-[#fff4dc] text-[#138a3d] group-hover:bg-[#f4bd45]"
+                    }`}
+                  >
+                    <program.icon size={21} />
+                  </div>
+                  <h3 className="font-black text-[#263128]">{program.title}</h3>
+                  <p className="mt-2 text-sm font-medium leading-6 text-[#66746a]">{program.description}</p>
+                  <p className={`mt-4 text-xs font-black uppercase tracking-[0.14em] ${active ? "text-[#138a3d]" : "text-[#b49a6b]"}`}>
+                    {active ? "Currently featured" : "Tap to preview"}
+                  </p>
+                </button>
+              );
+            })}
+          </div>
+
+          {hiddenProgramCount > 0 ? (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowAllPrograms(true)}
+                className="focus-ring rounded-full border border-[#138a3d]/20 bg-white px-6 py-3 text-sm font-black text-[#138a3d] shadow-sm transition hover:-translate-y-0.5 hover:bg-[#eef8ef]"
+              >
+                View all programs ({hiddenProgramCount} more)
               </button>
-            );
-          })}
+            </div>
+          ) : filteredPrograms.length > 8 ? (
+            <div className="mt-6 flex justify-center">
+              <button
+                type="button"
+                onClick={() => setShowAllPrograms(false)}
+                className="focus-ring rounded-full border border-[#e3d5b8] bg-white px-6 py-3 text-sm font-black text-[#526156] shadow-sm transition hover:-translate-y-0.5 hover:bg-[#fff4dc]"
+              >
+                Show fewer programs
+              </button>
+            </div>
+          ) : null}
         </div>
       </div>
     </>

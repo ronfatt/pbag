@@ -6,14 +6,14 @@ export function Hero() {
   return (
     <section id="home" className="relative min-h-[740px] overflow-hidden bg-[#0b2d18] text-white">
       <Image
-        src="/images/hero-students.webp"
-        alt="PBAG students learning together"
+        src="/images/classroom-learning.webp"
+        alt="PBAG students learning together in a classroom"
         fill
-        className="object-cover object-[58%_42%]"
+        className="object-cover object-center"
         priority
         sizes="100vw"
       />
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,37,20,0.9),rgba(9,37,20,0.62),rgba(9,37,20,0.12)),linear-gradient(0deg,rgba(9,37,20,0.72),transparent_48%)]" />
+      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(9,37,20,0.94),rgba(9,37,20,0.68),rgba(9,37,20,0.18)),linear-gradient(0deg,rgba(9,37,20,0.76),transparent_48%)]" />
       <div className="section-shell relative z-10 flex min-h-[740px] flex-col justify-center pb-36 pt-28">
         <div className="max-w-2xl">
           <p className="mb-5 inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/12 px-4 py-2 text-sm font-bold backdrop-blur">

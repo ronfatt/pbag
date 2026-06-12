@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { MessageCircle, QrCode } from "lucide-react";
 import { CopyAccountButton } from "@/components/CopyAccountButton";
+import { DonationReceiptForm } from "@/components/DonationReceiptForm";
 import { SectionReveal } from "@/components/SectionReveal";
 import { donation, givingOptions } from "@/data/siteContent";
 
@@ -88,6 +89,10 @@ export function WaysToGive() {
               After transferring, send the receipt by WhatsApp so PBAG can acknowledge your support.
             </p>
           </div>
+        </SectionReveal>
+
+        <SectionReveal className="mt-8">
+          <DonationReceiptForm />
         </SectionReveal>
       </div>
     </section>
