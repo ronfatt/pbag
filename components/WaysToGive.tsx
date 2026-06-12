@@ -1,42 +1,11 @@
-"use client";
-
 import Image from "next/image";
-import { Check, Copy, MessageCircle, QrCode } from "lucide-react";
-import { useState } from "react";
+import { MessageCircle, QrCode } from "lucide-react";
+import { CopyAccountButton } from "@/components/CopyAccountButton";
 import { SectionReveal } from "@/components/SectionReveal";
 import { donation, givingOptions } from "@/data/siteContent";
 
 export function WaysToGive() {
-  const [copied, setCopied] = useState(false);
-  const [copyFailed, setCopyFailed] = useState(false);
   const quickAmounts = ["RM50", "RM100", "RM300", "RM700", "RM1000"];
-
-  async function copyAccountNumber() {
-    const accountNumber = donation.accountNo.replaceAll(" ", "");
-
-    try {
-      if (navigator.clipboard?.writeText) {
-        await navigator.clipboard.writeText(accountNumber);
-      } else {
-        const input = document.createElement("textarea");
-        input.value = accountNumber;
-        input.setAttribute("readonly", "");
-        input.style.position = "fixed";
-        input.style.opacity = "0";
-        document.body.appendChild(input);
-        input.select();
-        document.execCommand("copy");
-        document.body.removeChild(input);
-      }
-
-      setCopied(true);
-      setCopyFailed(false);
-      window.setTimeout(() => setCopied(false), 1800);
-    } catch {
-      setCopyFailed(true);
-      window.setTimeout(() => setCopyFailed(false), 2200);
-    }
-  }
 
   return (
     <section id="give" className="section-y bg-white">
@@ -91,14 +60,7 @@ export function WaysToGive() {
                   <span>Account No: {donation.accountNo}</span>
                   <span>Account Name: {donation.accountName}</span>
                 </dd>
-                <button
-                  type="button"
-                  onClick={copyAccountNumber}
-                  className="focus-ring mt-4 inline-flex items-center gap-2 rounded-full bg-[#f4bd45] px-4 py-3 text-sm font-black text-[#263128] transition hover:bg-[#ffd36b]"
-                >
-                  {copied ? <Check size={17} /> : <Copy size={17} />}
-                  {copied ? "Copied" : copyFailed ? "Copy unavailable" : "Copy Account Number"}
-                </button>
+                <CopyAccountButton accountNumber={donation.accountNo} className="mt-4" />
                 <a
                   href="https://wa.me/60198088281"
                   target="_blank"

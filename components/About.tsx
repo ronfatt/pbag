@@ -32,10 +32,10 @@ export function About() {
 
           <SectionReveal delay={0.1} className="grid gap-4">
             <div className="relative aspect-[4/3] overflow-hidden rounded-lg shadow-2xl">
-              <Image src="/images/classroom-learning.jpg" alt="Classroom learning at PBAG" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
+              <Image src="/images/classroom-learning.webp" alt="Classroom learning at PBAG" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
             </div>
             <div className="relative aspect-[16/9] overflow-hidden rounded-lg shadow-lg">
-              <Image src="/images/school-building.jpg" alt="PBAG school building" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
+              <Image src="/images/school-building.webp" alt="PBAG school building" fill className="object-cover" sizes="(min-width: 1024px) 45vw, 100vw" />
             </div>
           </SectionReveal>
         </div>

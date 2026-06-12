@@ -1,6 +1,7 @@
 "use client";
 
 import { ExternalLink, Loader2, Share2 } from "lucide-react";
+import Image from "next/image";
 import { useState } from "react";
 import { SectionReveal } from "@/components/SectionReveal";
 
@@ -22,6 +23,9 @@ export function LatestFacebook() {
           </h2>
           <p className="mt-5 text-lg leading-8 text-[#56645a]">
             Follow PBAG's active Facebook page for the newest classroom moments, community visits, health programs, and volunteer stories.
+          </p>
+          <p className="mt-4 rounded-lg bg-[#eef8ef] px-4 py-3 text-sm font-bold leading-6 text-[#138a3d]">
+            PBAG updates weekly on Facebook with real photos from classes, visits, workshops, and community care.
           </p>
           <a
             href={facebookPageUrl}
@@ -50,21 +54,44 @@ export function LatestFacebook() {
                 />
               </div>
             ) : (
-              <div className="flex min-h-[420px] flex-col items-center justify-center rounded-md bg-white p-8 text-center">
-                <div className="mb-5 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#1877f2] text-white">
-                  <Share2 size={24} />
+              <div className="rounded-md bg-white p-4">
+                <div className="grid gap-3 sm:grid-cols-3">
+                  {[
+                    { src: "/images/suhakam-visit.webp", alt: "SUHAKAM visit to PBAG" },
+                    { src: "/images/preschool-workshop-2026.webp", alt: "PBAG preschool workshop" },
+                    { src: "/images/medical-camp-community.webp", alt: "PBAG medical camp" }
+                  ].map((image) => (
+                    <div key={image.src} className="relative aspect-[4/3] overflow-hidden rounded-md bg-[#fffaf0]">
+                      <Image src={image.src} alt={image.alt} fill className="object-cover" sizes="(min-width: 1024px) 12vw, 33vw" />
+                    </div>
+                  ))}
                 </div>
-                <h3 className="text-2xl font-black text-[#263128]">Load the latest Facebook posts</h3>
-                <p className="mt-3 max-w-sm text-sm font-semibold leading-6 text-[#66746a]">
-                  Facebook content loads from Meta. Keeping it optional helps the page stay faster and cleaner.
-                </p>
+
+                <div className="mt-4 rounded-lg border border-[#e8ddc7] bg-[#fffaf0] p-5">
+                  <div className="flex items-start gap-3">
+                    <div className="inline-flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-[#1877f2] text-white">
+                      <Share2 size={21} />
+                    </div>
+                    <div className="text-left">
+                      <p className="text-sm font-black text-[#263128]">Grace Training Centre, Tawau</p>
+                      <p className="mt-1 text-xs font-bold text-[#66746a]">Recent community updates</p>
+                      <p className="mt-3 text-sm font-semibold leading-6 text-[#56645a]">
+                        Classroom learning, teacher workshops, medical care, vaccination support, volunteer stories, and centre visits are shared actively on Facebook.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
                 <button
                   type="button"
                   onClick={() => setLoaded(true)}
-                  className="focus-ring mt-6 inline-flex items-center gap-2 rounded-full bg-[#1877f2] px-6 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-[#0f66d4]"
+                  className="focus-ring mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1877f2] px-6 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-[#0f66d4]"
                 >
                   <Loader2 size={17} /> Load Facebook updates
                 </button>
+                <p className="mt-3 text-center text-xs font-semibold leading-5 text-[#66746a]">
+                  Facebook content loads from Meta only after you click, keeping this page lighter.
+                </p>
               </div>
             )}
           </div>

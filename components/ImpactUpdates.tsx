@@ -29,6 +29,14 @@ export function ImpactUpdates() {
                   <p className="text-sm font-black text-[#138a3d]">{update.date}</p>
                   <h3 className="mt-2 text-xl font-black text-[#263128]">{update.title}</h3>
                   <p className="mt-3 text-sm font-semibold leading-7 text-[#66746a]">{update.description}</p>
+                  <div className="mt-5 grid gap-3 border-t border-[#efe4cf] pt-5">
+                    <p className="text-sm font-semibold leading-6 text-[#56645a]">
+                      <strong className="text-[#263128]">Why it matters:</strong> {update.whyItMatters}
+                    </p>
+                    <p className="text-sm font-semibold leading-6 text-[#56645a]">
+                      <strong className="text-[#263128]">How support helps:</strong> {update.supportHelps}
+                    </p>
+                  </div>
                 </div>
               </article>
             </SectionReveal>

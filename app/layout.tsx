@@ -34,10 +34,10 @@ export const metadata: Metadata = {
     siteName: "Pusat Bimbingan Alternatif Grace",
     images: [
       {
-        url: "/images/hero-students.jpg",
-        width: 1135,
-        height: 1280,
-        alt: "PBAG students in Tawau"
+        url: "/images/classroom-learning.jpg",
+        width: 1060,
+        height: 410,
+        alt: "PBAG students learning in Tawau"
       }
     ]
   },
@@ -46,8 +46,31 @@ export const metadata: Metadata = {
     title: "PBAG Grace Training Centre | Sponsor Education in Tawau",
     description:
       "Support PBAG's alternative education centre for undocumented children in Tawau, Sabah.",
-    images: ["/images/hero-students.jpg"]
+    images: ["/images/classroom-learning.jpg"]
   }
+};
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": ["EducationalOrganization", "NGO"],
+  name: "Pusat Bimbingan Alternatif Grace",
+  alternateName: "Grace Training Centre",
+  url: "https://pbag.vercel.app",
+  logo: "https://pbag.vercel.app/images/pbag-logo.png",
+  image: "https://pbag.vercel.app/images/classroom-learning.jpg",
+  description:
+    "Pusat Bimbingan Alternatif Grace is an alternative education centre in Tawau, Sabah supporting undocumented children through education, skills training, and community care.",
+  telephone: "+60198088281",
+  email: "gtctawau@gmail.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "TB 14354-14356, Lot 8-10, Pekan Kinabutan, Mile 5 1/2, Jalan Apas",
+    addressLocality: "Tawau",
+    addressRegion: "Sabah",
+    postalCode: "91000",
+    addressCountry: "MY"
+  },
+  sameAs: ["https://www.facebook.com/gtctawau"]
 };
 
 export default function RootLayout({
@@ -57,7 +80,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${geistSans.variable} ${geistMono.variable}`}>
-      <body className="antialiased">{children}</body>
+      <body className="antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+        />
+        {children}
+      </body>
     </html>
   );
 }

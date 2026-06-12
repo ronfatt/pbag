@@ -1,5 +1,6 @@
 import { About } from "@/components/About";
 import { Contact } from "@/components/Contact";
+import { DonationStrip } from "@/components/DonationStrip";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { ImpactUpdates } from "@/components/ImpactUpdates";
@@ -16,11 +17,12 @@ export default function Home() {
     <main>
       <Navbar />
       <Hero />
+      <DonationStrip />
       <About />
-      <Programs />
       <Sponsor />
       <WaysToGive />
       <TrustTransparency />
+      <Programs />
       <ImpactUpdates />
       <LatestFacebook />
       <Testimonials />
