@@ -3,11 +3,15 @@
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { navItems } from "@/data/siteContent";
+import { languageLabels, type Language } from "@/data/translations";
+import { useLanguage } from "@/components/LanguageProvider";
+
+const languages: Language[] = ["en", "bm", "zh"];
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -40,7 +44,7 @@ export function Navbar() {
           </a>
 
           <div className="hidden items-center gap-6 lg:flex">
-            {navItems.map((item) => (
+            {t.nav.items.map((item) => (
               <a
                 key={item.href}
                 href={item.href}
@@ -54,27 +58,43 @@ export function Navbar() {
           </div>
 
           <div className="hidden items-center gap-3 lg:flex">
-            <div className={`rounded-full border px-3 py-2 text-xs font-bold ${scrolled ? "border-[#dce8dd] text-[#506253]" : "border-white/35 text-white"}`}>
-              EN | BM | 中文
+            <div
+              className={`flex rounded-full border p-1 text-xs font-bold ${
+                scrolled ? "border-[#dce8dd] text-[#506253]" : "border-white/35 text-white"
+              }`}
+              aria-label="Language switcher"
+            >
+              {languages.map((item) => (
+                <button
+                  key={item}
+                  type="button"
+                  onClick={() => setLanguage(item)}
+                  className={`rounded-full px-2 py-1 transition ${
+                    language === item ? "bg-[#f4bd45] text-[#263128]" : "hover:bg-white/12"
+                  }`}
+                >
+                  {languageLabels[item]}
+                </button>
+              ))}
             </div>
             <a
               href="#give"
               className="focus-ring rounded-full bg-[#d9342b] px-5 py-3 text-sm font-bold text-white shadow-lg shadow-red-900/15 transition hover:-translate-y-0.5 hover:bg-[#bb2821]"
             >
-              Donate
+              {t.nav.donate}
             </a>
             <a
               href="#sponsor"
               className="focus-ring rounded-full bg-[#f4bd45] px-5 py-3 text-sm font-bold text-[#263128] shadow-lg shadow-yellow-900/10 transition hover:-translate-y-0.5 hover:bg-[#e5ad35]"
             >
-              Sponsor A Child
+              {t.nav.sponsor}
             </a>
           </div>
 
           <button
             type="button"
             className={`focus-ring rounded-full p-3 lg:hidden ${scrolled ? "bg-[#f4f0e7] text-[#263128]" : "bg-white/15 text-white"}`}
-            aria-label="Open menu"
+            aria-label={t.nav.openMenu}
             aria-expanded={open}
             onClick={() => setOpen((value) => !value)}
           >
@@ -85,7 +105,7 @@ export function Navbar() {
         {open ? (
           <div className="border-t border-[#e6e0d1] bg-white px-5 py-5 shadow-xl lg:hidden">
             <div className="mx-auto flex max-w-md flex-col gap-2">
-              {navItems.map((item) => (
+              {t.nav.items.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
@@ -95,7 +115,18 @@ export function Navbar() {
                   {item.label}
                 </a>
               ))}
-              <div className="px-3 py-2 text-xs font-bold text-[#66746a]">EN | BM | 中文</div>
+              <div className="flex gap-2 px-3 py-2 text-xs font-bold text-[#66746a]">
+                {languages.map((item) => (
+                  <button
+                    key={item}
+                    type="button"
+                    onClick={() => setLanguage(item)}
+                    className={`rounded-full px-3 py-2 ${language === item ? "bg-[#f4bd45] text-[#263128]" : "bg-[#f4f0e7]"}`}
+                  >
+                    {languageLabels[item]}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
         ) : null}
@@ -103,10 +134,10 @@ export function Navbar() {
 
       <div className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 border-t border-white/30 bg-white/95 p-3 shadow-2xl backdrop-blur md:hidden">
         <a href="#give" className="mx-1 rounded-full bg-[#d9342b] px-4 py-3 text-center text-sm font-bold text-white">
-          Donate
+          {t.nav.donate}
         </a>
         <a href="#sponsor" className="mx-1 rounded-full bg-[#f4bd45] px-4 py-3 text-center text-sm font-bold text-[#263128]">
-          Sponsor
+          {t.nav.sponsorShort}
         </a>
       </div>
     </>

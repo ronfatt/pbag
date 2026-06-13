@@ -1,16 +1,21 @@
+"use client";
+
 import Image from "next/image";
 import { Quote } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
+import { useLanguage } from "@/components/LanguageProvider";
 import { testimonials } from "@/data/siteContent";
 
 export function Testimonials() {
+  const { t } = useLanguage();
+
   return (
     <section id="volunteer" className="section-y bg-white">
       <div className="section-shell">
         <SectionReveal className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-center">
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">Volunteer voices</p>
-            <h2 className="mt-3 text-4xl font-black tracking-normal text-[#263128] sm:text-5xl">Volunteer Testimonials</h2>
+            <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">{t.testimonialsSection.eyebrow}</p>
+            <h2 className="mt-3 text-4xl font-black tracking-normal text-[#263128] sm:text-5xl">{t.testimonialsSection.title}</h2>
           </div>
           <div className="relative aspect-[16/8] overflow-hidden rounded-lg shadow-xl">
             <Image src="/images/baking-volunteers.webp" alt="PBAG volunteers and students after a baking skills session" fill className="object-cover" sizes="(min-width: 1024px) 60vw, 100vw" />

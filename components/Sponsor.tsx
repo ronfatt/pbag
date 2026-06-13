@@ -1,21 +1,25 @@
+"use client";
+
 import { CheckCircle2 } from "lucide-react";
 import { SectionReveal } from "@/components/SectionReveal";
-import { sponsorships } from "@/data/siteContent";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export function Sponsor() {
+  const { t } = useLanguage();
+
   return (
     <section id="sponsor" className="section-y bg-[#113f25] text-white">
       <div className="section-shell">
         <SectionReveal className="mx-auto max-w-3xl text-center">
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#f4bd45]">Sponsor a child</p>
-          <h2 className="mt-3 text-4xl font-black tracking-normal sm:text-5xl">Sponsor A Child's Education</h2>
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#f4bd45]">{t.sponsor.eyebrow}</p>
+          <h2 className="mt-3 text-4xl font-black tracking-normal sm:text-5xl">{t.sponsor.title}</h2>
           <p className="mt-5 text-lg leading-8 text-white/78">
-            Your sponsorship helps cover school fees, books, uniforms, learning materials, and basic education support.
+            {t.sponsor.intro}
           </p>
         </SectionReveal>
 
         <div className="mx-auto mt-11 grid max-w-4xl gap-6 md:grid-cols-2">
-          {sponsorships.map((plan, index) => (
+          {t.sponsor.plans.map((plan, index) => (
             <SectionReveal key={plan.title} delay={index * 0.1}>
               <article className="flex h-full min-h-[470px] flex-col rounded-lg bg-white p-7 text-[#263128] shadow-2xl transition hover:-translate-y-1">
                 <div className="min-h-[72px]">
@@ -23,7 +27,7 @@ export function Sponsor() {
                 </div>
                 <div className="mt-4 flex min-h-[72px] items-end gap-2">
                   <span className="text-5xl font-black leading-none text-[#138a3d]">{plan.price}</span>
-                  <span className="pb-2 text-base font-bold text-[#66746a]">{plan.period}</span>
+                  <span className="pb-2 text-base font-bold text-[#66746a]">{t.sponsor.period}</span>
                 </div>
                 <ul className="mt-7 flex-1 space-y-3">
                   {plan.includes.map((item) => (
@@ -45,7 +49,7 @@ export function Sponsor() {
 
         <SectionReveal delay={0.2}>
           <p className="mx-auto mt-8 max-w-3xl rounded-lg border border-white/15 bg-white/10 p-5 text-center text-sm font-semibold leading-7 text-white/82">
-            You may sponsor one or more students. Monthly and one-off giving options are also welcome.
+            {t.sponsor.note}
           </p>
         </SectionReveal>
       </div>

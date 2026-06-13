@@ -4,6 +4,7 @@ import { ExternalLink, Loader2, Share2 } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import { SectionReveal } from "@/components/SectionReveal";
+import { useLanguage } from "@/components/LanguageProvider";
 
 const facebookPageUrl = "https://www.facebook.com/gtctawau";
 const pluginUrl = `https://www.facebook.com/plugins/page.php?href=${encodeURIComponent(
@@ -12,20 +13,21 @@ const pluginUrl = `https://www.facebook.com/plugins/page.php?href=${encodeURICom
 
 export function LatestFacebook() {
   const [loaded, setLoaded] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <section id="facebook" className="section-y bg-white">
       <div className="section-shell grid gap-10 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
         <SectionReveal>
-          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">Latest updates</p>
+          <p className="text-sm font-black uppercase tracking-[0.18em] text-[#138a3d]">{t.facebook.eyebrow}</p>
           <h2 className="mt-3 text-4xl font-black tracking-normal text-[#263128] sm:text-5xl">
-            Latest From Facebook
+            {t.facebook.title}
           </h2>
           <p className="mt-5 text-lg leading-8 text-[#56645a]">
-            Follow PBAG's active Facebook page for the newest classroom moments, community visits, health programs, and volunteer stories.
+            {t.facebook.intro}
           </p>
           <p className="mt-4 rounded-lg bg-[#eef8ef] px-4 py-3 text-sm font-bold leading-6 text-[#138a3d]">
-            PBAG updates weekly on Facebook with real photos from classes, visits, workshops, and community care.
+            {t.facebook.note}
           </p>
           <a
             href={facebookPageUrl}
@@ -33,7 +35,7 @@ export function LatestFacebook() {
             rel="noreferrer"
             className="focus-ring mt-8 inline-flex items-center justify-center gap-2 rounded-full bg-[#1877f2] px-6 py-4 text-sm font-black text-white shadow-lg shadow-blue-900/10 transition hover:-translate-y-1 hover:bg-[#0f66d4]"
           >
-            <Share2 size={18} /> Follow PBAG on Facebook <ExternalLink size={16} />
+            <Share2 size={18} /> {t.facebook.follow} <ExternalLink size={16} />
           </a>
         </SectionReveal>
 
@@ -74,9 +76,9 @@ export function LatestFacebook() {
                     </div>
                     <div className="text-left">
                       <p className="text-sm font-black text-[#263128]">Grace Training Centre, Tawau</p>
-                      <p className="mt-1 text-xs font-bold text-[#66746a]">Recent community updates</p>
+                      <p className="mt-1 text-xs font-bold text-[#66746a]">{t.facebook.previewLabel}</p>
                       <p className="mt-3 text-sm font-semibold leading-6 text-[#56645a]">
-                        Classroom learning, teacher workshops, medical care, vaccination support, volunteer stories, and centre visits are shared actively on Facebook.
+                        {t.facebook.previewText}
                       </p>
                     </div>
                   </div>
@@ -87,10 +89,10 @@ export function LatestFacebook() {
                   onClick={() => setLoaded(true)}
                   className="focus-ring mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#1877f2] px-6 py-4 text-sm font-black text-white transition hover:-translate-y-1 hover:bg-[#0f66d4]"
                 >
-                  <Loader2 size={17} /> Load Facebook updates
+                  <Loader2 size={17} /> {t.facebook.load}
                 </button>
                 <p className="mt-3 text-center text-xs font-semibold leading-5 text-[#66746a]">
-                  Facebook content loads from Meta only after you click, keeping this page lighter.
+                  {t.facebook.loadNote}
                 </p>
               </div>
             )}

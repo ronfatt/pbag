@@ -1,7 +1,8 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { MessageCircle, Send } from "lucide-react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type ReceiptFormState = {
   name: string;
@@ -21,6 +22,17 @@ const initialState: ReceiptFormState = {
 
 export function DonationReceiptForm() {
   const [form, setForm] = useState(initialState);
+  const { t } = useLanguage();
+
+  useEffect(() => {
+    setForm((current) => {
+      if (t.receipt.methods.includes(current.method as never)) {
+        return current;
+      }
+
+      return { ...current, method: t.receipt.methods[0] };
+    });
+  }, [t.receipt.methods]);
 
   function updateField(field: keyof ReceiptFormState, value: string) {
     setForm((current) => ({ ...current, [field]: value }));
@@ -30,15 +42,15 @@ export function DonationReceiptForm() {
     event.preventDefault();
 
     const receiptMessage = [
-      "Hello PBAG, I have made a donation.",
+      t.receipt.whatsappMessage.intro,
       "",
-      `Name: ${form.name || "-"}`,
-      `Amount: RM${form.amount || "-"}`,
-      `Payment method: ${form.method}`,
-      `Transfer reference: ${form.reference || "-"}`,
-      form.message ? `Message: ${form.message}` : null,
+      `${t.receipt.whatsappMessage.name}: ${form.name || "-"}`,
+      `${t.receipt.whatsappMessage.amount}: RM${form.amount || "-"}`,
+      `${t.receipt.whatsappMessage.method}: ${form.method}`,
+      `${t.receipt.whatsappMessage.reference}: ${form.reference || "-"}`,
+      form.message ? `${t.receipt.whatsappMessage.message}: ${form.message}` : null,
       "",
-      "I will attach the transfer receipt here. Thank you."
+      t.receipt.whatsappMessage.attach
     ]
       .filter(Boolean)
       .join("\n");
@@ -53,25 +65,25 @@ export function DonationReceiptForm() {
           <MessageCircle size={21} />
         </div>
         <div>
-          <h3 className="text-2xl font-black text-[#263128]">Send Donation Receipt</h3>
+          <h3 className="text-2xl font-black text-[#263128]">{t.receipt.title}</h3>
           <p className="mt-2 text-sm font-semibold leading-6 text-[#66746a]">
-            After transferring, send your details to PBAG by WhatsApp. Attach the receipt image in WhatsApp after the message opens.
+            {t.receipt.intro}
           </p>
         </div>
       </div>
 
       <div className="mt-6 grid gap-4 md:grid-cols-2">
         <label className="grid gap-2 text-sm font-black text-[#263128]">
-          Donor name
+          {t.receipt.donorName}
           <input
             value={form.name}
             onChange={(event) => updateField("name", event.target.value)}
             className="focus-ring rounded-md border border-[#e0d4bd] bg-white px-4 py-3 text-sm font-semibold text-[#263128]"
-            placeholder="Your name"
+            placeholder={t.receipt.donorNamePlaceholder}
           />
         </label>
         <label className="grid gap-2 text-sm font-black text-[#263128]">
-          Amount (RM)
+          {t.receipt.amount}
           <input
             value={form.amount}
             onChange={(event) => updateField("amount", event.target.value)}
@@ -81,37 +93,35 @@ export function DonationReceiptForm() {
           />
         </label>
         <label className="grid gap-2 text-sm font-black text-[#263128]">
-          Payment method
+          {t.receipt.method}
           <select
             value={form.method}
             onChange={(event) => updateField("method", event.target.value)}
             className="focus-ring rounded-md border border-[#e0d4bd] bg-white px-4 py-3 text-sm font-semibold text-[#263128]"
           >
-            <option>Online Funds Transfer</option>
-            <option>DuitNow QR</option>
-            <option>Cheque</option>
-            <option>Cash</option>
-            <option>International Transfer</option>
+            {t.receipt.methods.map((method) => (
+              <option key={method}>{method}</option>
+            ))}
           </select>
         </label>
         <label className="grid gap-2 text-sm font-black text-[#263128]">
-          Transfer reference
+          {t.receipt.reference}
           <input
             value={form.reference}
             onChange={(event) => updateField("reference", event.target.value)}
             className="focus-ring rounded-md border border-[#e0d4bd] bg-white px-4 py-3 text-sm font-semibold text-[#263128]"
-            placeholder="Bank reference / receipt no."
+            placeholder={t.receipt.referencePlaceholder}
           />
         </label>
       </div>
 
       <label className="mt-4 grid gap-2 text-sm font-black text-[#263128]">
-        Message
+        {t.receipt.message}
         <textarea
           value={form.message}
           onChange={(event) => updateField("message", event.target.value)}
           className="focus-ring min-h-24 rounded-md border border-[#e0d4bd] bg-white px-4 py-3 text-sm font-semibold text-[#263128]"
-          placeholder="Optional note for PBAG"
+          placeholder={t.receipt.messagePlaceholder}
         />
       </label>
 
@@ -119,7 +129,7 @@ export function DonationReceiptForm() {
         type="submit"
         className="focus-ring mt-5 inline-flex w-full items-center justify-center gap-2 rounded-full bg-[#d9342b] px-6 py-4 text-sm font-black text-white transition hover:-translate-y-0.5 hover:bg-[#bb2821] sm:w-auto"
       >
-        <Send size={17} /> Send via WhatsApp
+        <Send size={17} /> {t.receipt.submit}
       </button>
     </form>
   );

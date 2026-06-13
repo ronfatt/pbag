@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { CopyAccountButton } from "@/components/CopyAccountButton";
-import { donation, navItems } from "@/data/siteContent";
+import { useLanguage } from "@/components/LanguageProvider";
+import { donation } from "@/data/siteContent";
 
 export function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-[#102319] pb-24 pt-14 text-white md:pb-8">
       <div className="section-shell">
@@ -17,15 +22,15 @@ export function Footer() {
               </div>
             </div>
             <p className="mt-5 max-w-md text-sm font-semibold leading-7 text-white/72">
-              Giving every child a chance to life through education, care, and community support.
+              {t.footer.mission}
             </p>
             <p className="mt-5 inline-flex rounded-full bg-[#f4bd45] px-4 py-2 text-sm font-black text-[#263128]">
-              Sponsor from RM700/year
+              {t.footer.sponsor}
             </p>
           </div>
 
           <div>
-            <p className="text-sm font-black uppercase tracking-[0.16em] text-[#f4bd45]">Donate</p>
+            <p className="text-sm font-black uppercase tracking-[0.16em] text-[#f4bd45]">{t.footer.donate}</p>
             <div className="mt-4 flex gap-4 rounded-lg border border-white/12 bg-white/8 p-4">
               <div className="relative h-24 w-24 shrink-0 overflow-hidden rounded-md bg-white">
                 <Image src="/images/qr-donation.png" alt="PBAG DuitNow donation QR code" fill className="object-contain p-1" sizes="96px" />
@@ -50,18 +55,17 @@ export function Footer() {
           </div>
 
           <div className="grid grid-cols-2 gap-3 self-start">
-            {["About", "Programs", "Sponsor", "Donate", "Contact"].map((label) => {
-              const href = label === "Donate" ? "#give" : navItems.find((item) => item.label === label)?.href ?? "#contact";
+            {[...t.nav.items.slice(0, 3), { label: t.nav.donate, href: "#give" }, t.nav.items[5]].map((item) => {
               return (
-                <a key={label} href={href} className="rounded-md py-2 text-sm font-bold text-white/72 transition hover:text-[#f4bd45]">
-                  {label}
+                <a key={item.href} href={item.href} className="rounded-md py-2 text-sm font-bold text-white/72 transition hover:text-[#f4bd45]">
+                  {item.label}
                 </a>
               );
             })}
           </div>
         </div>
         <div className="mt-10 border-t border-white/12 pt-6 text-sm font-semibold text-white/56">
-          © 2026 Pusat Bimbingan Alternatif Grace. All rights reserved.
+          © 2026 Pusat Bimbingan Alternatif Grace. {t.footer.rights}
         </div>
       </div>
     </footer>

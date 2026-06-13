@@ -1,9 +1,14 @@
+"use client";
+
 import Image from "next/image";
 import { MessageCircle } from "lucide-react";
 import { CopyAccountButton } from "@/components/CopyAccountButton";
+import { useLanguage } from "@/components/LanguageProvider";
 import { donation } from "@/data/siteContent";
 
 export function DonationStrip() {
+  const { t } = useLanguage();
+
   return (
     <section id="quick-donate" className="bg-white">
       <div className="section-shell -mt-10 relative z-20">
@@ -13,14 +18,14 @@ export function DonationStrip() {
               <Image src="/images/qr-donation.png" alt="PBAG DuitNow donation QR code" fill className="object-contain p-1" sizes="80px" />
             </div>
             <div>
-              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#d9342b]">Donate now</p>
+              <p className="text-xs font-black uppercase tracking-[0.16em] text-[#d9342b]">{t.quickDonate.eyebrow}</p>
               <h2 className="mt-1 text-xl font-black text-[#263128]">Public Bank: {donation.accountNo}</h2>
               <p className="mt-1 text-sm font-semibold text-[#66746a]">{donation.accountName}</p>
             </div>
           </div>
 
           <p className="text-sm font-semibold leading-6 text-[#56645a]">
-            Your gift helps cover fees, books, uniforms and learning support for PBAG students.
+            {t.quickDonate.description}
           </p>
 
           <div className="flex flex-col gap-2 sm:flex-row md:justify-end">
@@ -31,7 +36,7 @@ export function DonationStrip() {
               rel="noreferrer"
               className="focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-[#138a3d] px-4 py-3 text-sm font-black text-white transition hover:bg-[#0f7332]"
             >
-              <MessageCircle size={17} /> WhatsApp
+              <MessageCircle size={17} /> {t.quickDonate.whatsapp}
             </a>
           </div>
         </div>

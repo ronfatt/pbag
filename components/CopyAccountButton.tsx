@@ -2,6 +2,7 @@
 
 import { Check, Copy } from "lucide-react";
 import { useState } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 type CopyAccountButtonProps = {
   accountNumber: string;
@@ -11,6 +12,7 @@ type CopyAccountButtonProps = {
 export function CopyAccountButton({ accountNumber, className = "" }: CopyAccountButtonProps) {
   const [copied, setCopied] = useState(false);
   const [copyFailed, setCopyFailed] = useState(false);
+  const { t } = useLanguage();
 
   async function copyAccountNumber() {
     const cleanAccountNumber = accountNumber.replaceAll(" ", "");
@@ -46,7 +48,7 @@ export function CopyAccountButton({ accountNumber, className = "" }: CopyAccount
       className={`focus-ring inline-flex items-center justify-center gap-2 rounded-full bg-[#f4bd45] px-4 py-3 text-sm font-black text-[#263128] transition hover:bg-[#ffd36b] ${className}`}
     >
       {copied ? <Check size={17} /> : <Copy size={17} />}
-      {copied ? "Copied" : copyFailed ? "Copy unavailable" : "Copy Account Number"}
+      {copied ? t.copy.copied : copyFailed ? t.copy.failed : t.copy.copy}
     </button>
   );
 }
