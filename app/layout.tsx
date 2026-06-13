@@ -13,31 +13,43 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://pbag.vercel.app"),
-  title: "PBAG Grace Training Centre | Sponsor Education in Tawau",
+  metadataBase: new URL("https://www.pbag.my"),
+  applicationName: "PBAG Grace Training Centre",
+  title: {
+    default: "PBAG Grace Training Centre | Sponsor Education in Tawau",
+    template: "%s | PBAG Grace Training Centre"
+  },
   description:
-    "Support Pusat Bimbingan Alternatif Grace, an alternative education centre in Tawau helping undocumented children learn, grow, and build a better future.",
+    "Sponsor or donate to PBAG Grace Training Centre in Tawau, Sabah, supporting education, skills training, and care for undocumented children.",
   keywords: [
     "PBAG",
+    "Pusat Bimbingan Alternatif Grace",
     "Grace Training Centre",
+    "PBAG Tawau",
     "Tawau donation",
     "Sabah charity",
     "sponsor a child",
-    "alternative education Malaysia"
+    "undocumented children education",
+    "alternative education Malaysia",
+    "Malaysia NGO donation"
   ],
+  alternates: {
+    canonical: "/"
+  },
   openGraph: {
-    title: "Give Every Child A Chance To Learn | PBAG Tawau",
+    title: "Give Every Child A Chance To Learn | PBAG Grace Training Centre",
     description:
-      "Sponsor or donate to PBAG and help undocumented children in Tawau receive education, skills training, and community care.",
+      "Support PBAG in Tawau, Sabah. Your sponsorship or donation helps undocumented children access education, skills training, and community care.",
+    url: "/",
     type: "website",
     locale: "en_MY",
     siteName: "Pusat Bimbingan Alternatif Grace",
     images: [
       {
-        url: "/images/classroom-learning.jpg",
-        width: 1060,
-        height: 410,
-        alt: "PBAG students learning in Tawau"
+        url: "/images/pbag-og.jpg",
+        width: 1200,
+        height: 630,
+        alt: "PBAG Grace Training Centre students learning in Tawau"
       }
     ]
   },
@@ -45,8 +57,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "PBAG Grace Training Centre | Sponsor Education in Tawau",
     description:
-      "Support PBAG's alternative education centre for undocumented children in Tawau, Sabah.",
-    images: ["/images/classroom-learning.jpg"]
+      "Sponsor or donate to PBAG in Tawau, Sabah, and help undocumented children receive education, skills training, and care.",
+    images: ["/images/pbag-og.jpg"]
   }
 };
 
@@ -55,9 +67,9 @@ const organizationJsonLd = {
   "@type": ["EducationalOrganization", "NGO"],
   name: "Pusat Bimbingan Alternatif Grace",
   alternateName: "Grace Training Centre",
-  url: "https://pbag.vercel.app",
-  logo: "https://pbag.vercel.app/images/pbag-logo.png",
-  image: "https://pbag.vercel.app/images/classroom-learning.jpg",
+  url: "https://www.pbag.my",
+  logo: "https://www.pbag.my/images/pbag-logo.png",
+  image: "https://www.pbag.my/images/pbag-og.jpg",
   description:
     "Pusat Bimbingan Alternatif Grace is an alternative education centre in Tawau, Sabah supporting undocumented children through education, skills training, and community care.",
   telephone: "+60198088281",
