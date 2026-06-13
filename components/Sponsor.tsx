@@ -21,7 +21,7 @@ export function Sponsor() {
         <div className="mx-auto mt-11 grid max-w-4xl gap-6 md:grid-cols-2">
           {t.sponsor.plans.map((plan, index) => (
             <SectionReveal key={plan.title} delay={index * 0.1}>
-              <article className="flex h-full min-h-[470px] flex-col rounded-lg bg-white p-7 text-[#263128] shadow-2xl transition hover:-translate-y-1">
+              <article className="flex h-full min-h-[500px] flex-col rounded-lg bg-white p-7 text-[#263128] shadow-2xl transition hover:-translate-y-1">
                 <div className="min-h-[72px]">
                   <h3 className="max-w-[15ch] text-2xl font-black leading-tight sm:max-w-none">{plan.title}</h3>
                 </div>
@@ -29,6 +29,9 @@ export function Sponsor() {
                   <span className="text-5xl font-black leading-none text-[#138a3d]">{plan.price}</span>
                   <span className="pb-2 text-base font-bold text-[#66746a]">{t.sponsor.period}</span>
                 </div>
+                <p className="mt-4 rounded-md bg-[#fff5df] p-4 text-sm font-bold leading-6 text-[#526156]">
+                  {plan.summary}
+                </p>
                 <ul className="mt-7 flex-1 space-y-3">
                   {plan.includes.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-sm font-bold text-[#526156]">

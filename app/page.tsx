@@ -20,10 +20,10 @@ export default function Home() {
         <Navbar />
         <Hero />
         <DonationStrip />
+        <TrustTransparency />
         <About />
         <Sponsor />
         <WaysToGive />
-        <TrustTransparency />
         <Programs />
         <ImpactUpdates />
         <LatestFacebook />

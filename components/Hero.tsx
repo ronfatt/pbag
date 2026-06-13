@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { ArrowRight, BadgeDollarSign, HeartHandshake } from "lucide-react";
+import { ArrowRight, BadgeDollarSign, HeartHandshake, MessageCircle } from "lucide-react";
 import { Stats } from "@/components/Stats";
 import { useLanguage } from "@/components/LanguageProvider";
 
@@ -50,6 +50,10 @@ export function Hero() {
               {t.hero.donateCta}
             </a>
           </div>
+          <p className="mt-5 inline-flex max-w-xl items-center gap-2 rounded-full border border-white/18 bg-black/18 px-4 py-2 text-sm font-bold leading-6 text-white/82 backdrop-blur">
+            <MessageCircle size={17} className="shrink-0 text-[#f4bd45]" />
+            {t.hero.afterCta}
+          </p>
         </div>
       </div>
       <Stats />

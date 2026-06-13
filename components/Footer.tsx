@@ -41,6 +41,9 @@ export function Footer() {
                 <p className="mt-1 text-xs font-semibold leading-5 text-white/58">{donation.accountName}</p>
               </div>
             </div>
+            <p className="mt-3 rounded-md bg-white/8 px-4 py-3 text-xs font-semibold leading-5 text-white/68">
+              {t.footer.receipt}
+            </p>
             <div className="mt-4 flex flex-col gap-2 sm:flex-row">
               <CopyAccountButton accountNumber={donation.accountNo} className="w-full sm:w-auto" />
               <a

@@ -57,6 +57,7 @@ export const translations = {
       subtitle:
         "PBAG provides alternative education for undocumented children in Tawau, helping them build confidence, skills, and a better future.",
       supportLine: "Your gift helps cover fees, books, uniforms and learning support",
+      afterCta: "Scan, transfer, then send your receipt by WhatsApp for acknowledgement.",
       sponsorCta: "Sponsor A Child",
       donateCta: "Make A Donation"
     },
@@ -69,7 +70,8 @@ export const translations = {
     quickDonate: {
       eyebrow: "Donate now",
       description: "Your gift helps cover fees, books, uniforms and learning support for PBAG students.",
-      whatsapp: "WhatsApp"
+      whatsapp: "WhatsApp",
+      steps: ["Choose amount", "Scan or transfer", "Send receipt"]
     },
     about: {
       eyebrow: "About PBAG",
@@ -115,12 +117,14 @@ export const translations = {
         {
           title: "Primary Student Sponsorship",
           price: "RM700",
+          summary: "Helps one primary student for one year with essential classroom support.",
           includes: ["Fees", "Books", "Uniform", "Learning support"],
           button: "Sponsor Primary Student"
         },
         {
           title: "Secondary Student Sponsorship",
           price: "RM1000",
+          summary: "Helps one secondary student for one year with education and skills development.",
           includes: ["Fees", "Books", "Uniform", "Skills development support"],
           button: "Sponsor Secondary Student"
         }
@@ -303,6 +307,7 @@ export const translations = {
       mission: "Giving every child a chance to life through education, care, and community support.",
       sponsor: "Sponsor from RM700/year",
       donate: "Donate",
+      receipt: "After transfer, send your receipt by WhatsApp so PBAG can acknowledge your support.",
       rights: "All rights reserved."
     },
     copy: {
@@ -333,6 +338,7 @@ export const translations = {
       subtitle:
         "PBAG menyediakan pendidikan alternatif untuk kanak-kanak tanpa dokumen di Tawau, membantu mereka membina keyakinan, kemahiran dan masa depan yang lebih baik.",
       supportLine: "Sumbangan anda membantu yuran, buku, uniform dan sokongan pembelajaran",
+      afterCta: "Imbas, pindahkan wang, kemudian hantar resit melalui WhatsApp untuk pengesahan.",
       sponsorCta: "Taja Seorang Anak",
       donateCta: "Buat Derma"
     },
@@ -345,7 +351,8 @@ export const translations = {
     quickDonate: {
       eyebrow: "Derma sekarang",
       description: "Sumbangan anda membantu yuran, buku, uniform dan sokongan pembelajaran pelajar PBAG.",
-      whatsapp: "WhatsApp"
+      whatsapp: "WhatsApp",
+      steps: ["Pilih jumlah", "Imbas atau pindah", "Hantar resit"]
     },
     about: {
       eyebrow: "Tentang PBAG",
@@ -391,12 +398,14 @@ export const translations = {
         {
           title: "Tajaan Pelajar Sekolah Rendah",
           price: "RM700",
+          summary: "Membantu seorang pelajar rendah selama satu tahun dengan sokongan kelas yang penting.",
           includes: ["Yuran", "Buku", "Uniform", "Sokongan pembelajaran"],
           button: "Taja Pelajar Rendah"
         },
         {
           title: "Tajaan Pelajar Sekolah Menengah",
           price: "RM1000",
+          summary: "Membantu seorang pelajar menengah selama satu tahun dengan pendidikan dan pembangunan kemahiran.",
           includes: ["Yuran", "Buku", "Uniform", "Sokongan pembangunan kemahiran"],
           button: "Taja Pelajar Menengah"
         }
@@ -577,6 +586,7 @@ export const translations = {
       mission: "Memberi setiap anak peluang hidup melalui pendidikan, penjagaan dan sokongan komuniti.",
       sponsor: "Tajaan bermula RM700/tahun",
       donate: "Derma",
+      receipt: "Selepas pindahan, hantar resit melalui WhatsApp supaya PBAG boleh mengesahkan sokongan anda.",
       rights: "Hak cipta terpelihara."
     },
     copy: {
@@ -606,6 +616,7 @@ export const translations = {
       title: "给每个孩子学习的机会",
       subtitle: "PBAG 为斗湖无证儿童提供替代教育，帮助他们建立自信、技能和更好的未来。",
       supportLine: "您的支持帮助支付学费、书本、校服和学习支援",
+      afterCta: "扫码或转账后，请通过 WhatsApp 发送收据，方便 PBAG 确认。",
       sponsorCta: "助养孩子",
       donateCta: "我要捐款"
     },
@@ -618,7 +629,8 @@ export const translations = {
     quickDonate: {
       eyebrow: "立即捐款",
       description: "您的捐款帮助 PBAG 学生支付学费、书本、校服和学习支援。",
-      whatsapp: "WhatsApp"
+      whatsapp: "WhatsApp",
+      steps: ["选择金额", "扫码或转账", "发送收据"]
     },
     about: {
       eyebrow: "关于 PBAG",
@@ -661,12 +673,14 @@ export const translations = {
         {
           title: "小学生助养",
           price: "RM700",
+          summary: "帮助一位小学生一整年获得基本课堂支援。",
           includes: ["学费", "书本", "校服", "学习支援"],
           button: "助养小学生"
         },
         {
           title: "中学生助养",
           price: "RM1000",
+          summary: "帮助一位中学生一整年接受教育与技能发展支援。",
           includes: ["学费", "书本", "校服", "技能发展支援"],
           button: "助养中学生"
         }
@@ -846,6 +860,7 @@ export const translations = {
       mission: "通过教育、关怀和社区支持，给每个孩子生活的机会。",
       sponsor: "助养 RM700/年起",
       donate: "捐款",
+      receipt: "转账后，请通过 WhatsApp 发送收据，方便 PBAG 确认您的支持。",
       rights: "版权所有。"
     },
     copy: {
