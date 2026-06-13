@@ -24,16 +24,13 @@
     <text x="166" y="82" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="34" font-weight="800">PBAG</text>
     <text x="166" y="118" fill="#ffffff" opacity="0.82" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700">Grace Training Centre, Tawau</text>
 
-    <rect x="70" y="176" width="284" height="48" rx="24" fill="url(#gold)" />
-    <text x="96" y="208" fill="#263128" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="800">Sponsor from RM700/year</text>
+    <text x="70" y="286" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900">Give Every Child</text>
+    <text x="70" y="360" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900">A Chance To Learn</text>
 
-    <text x="70" y="316" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900">Give Every Child</text>
-    <text x="70" y="390" fill="#ffffff" font-family="Arial, Helvetica, sans-serif" font-size="64" font-weight="900">A Chance To Learn</text>
-
-    <text x="74" y="456" fill="#ffffff" opacity="0.88" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600">
+    <text x="74" y="426" fill="#ffffff" opacity="0.88" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600">
       Education, skills training, and community care
     </text>
-    <text x="74" y="495" fill="#ffffff" opacity="0.88" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600">
+    <text x="74" y="465" fill="#ffffff" opacity="0.88" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="600">
       for undocumented children in Tawau, Sabah.
     </text>
 
