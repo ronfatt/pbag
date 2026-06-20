@@ -35,7 +35,7 @@ export const navItems = [
 ];
 
 export const stats = [
-  { value: "728", label: "students reached in 2023" },
+  { value: "877", label: "students reached in 2026" },
   { value: "70%", label: "growth in student numbers" },
   { value: "1st", label: "MOE registered centre for undocumented children" },
   { value: "Tawau", label: "serving families in Sabah" }

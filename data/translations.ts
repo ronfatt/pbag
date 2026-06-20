@@ -62,7 +62,7 @@ export const translations = {
       donateCta: "Make A Donation"
     },
     stats: [
-      { value: "728", label: "students reached in 2023" },
+      { value: "877", label: "students reached in 2026" },
       { value: "70%", label: "growth in student numbers" },
       { value: "1st", label: "MOE registered centre for undocumented children" },
       { value: "Tawau", label: "serving families in Sabah" }
@@ -78,7 +78,7 @@ export const translations = {
       title: "About Pusat Bimbingan Alternatif Grace",
       paragraphs: [
         "Pusat Bimbingan Alternatif Grace (PBAG), also known as Grace Training Centre, is located at Mile 5.5 Jalan Apas, Tawau. Registered by the Ministry of Education in Putrajaya on 15 June 2015, PBAG provides alternative education for undocumented children who face limited access to formal schooling.",
-        "Since its beginning, PBAG has served hundreds of children. In 2023, student numbers grew by 70% to 728 students, with many more still waiting for a place. Through education, skills training, and community support, PBAG helps children grow into responsible and capable individuals."
+        "Since its beginning, PBAG has served hundreds of children. In 2026, PBAG reached 877 students, with many more still waiting for a place. Through education, skills training, and community support, PBAG helps children grow into responsible and capable individuals."
       ],
       missionTitle: "Every child has the right to education.",
       missionText: "This mission guides each class, meal, skill lesson, and community visit.",
@@ -343,7 +343,7 @@ export const translations = {
       donateCta: "Buat Derma"
     },
     stats: [
-      { value: "728", label: "pelajar dibantu pada 2023" },
+      { value: "877", label: "pelajar dibantu pada 2026" },
       { value: "70%", label: "pertumbuhan jumlah pelajar" },
       { value: "1st", label: "pusat berdaftar KPM untuk kanak-kanak tanpa dokumen" },
       { value: "Tawau", label: "berkhidmat untuk keluarga di Sabah" }
@@ -359,7 +359,7 @@ export const translations = {
       title: "Tentang Pusat Bimbingan Alternatif Grace",
       paragraphs: [
         "Pusat Bimbingan Alternatif Grace (PBAG), juga dikenali sebagai Grace Training Centre, terletak di Batu 5.5 Jalan Apas, Tawau. Berdaftar dengan Kementerian Pendidikan Malaysia di Putrajaya pada 15 Jun 2015, PBAG menyediakan pendidikan alternatif untuk kanak-kanak tanpa dokumen yang mempunyai akses terhad kepada persekolahan formal.",
-        "Sejak penubuhannya, PBAG telah melayani ratusan kanak-kanak. Pada tahun 2023, jumlah pelajar meningkat 70% kepada 728 orang, dengan ramai lagi masih menunggu tempat. Melalui pendidikan, latihan kemahiran dan sokongan komuniti, PBAG membantu kanak-kanak membesar menjadi individu yang bertanggungjawab dan berkebolehan."
+        "Sejak penubuhannya, PBAG telah melayani ratusan kanak-kanak. Pada tahun 2026, PBAG telah membantu 877 pelajar, dengan ramai lagi masih menunggu tempat. Melalui pendidikan, latihan kemahiran dan sokongan komuniti, PBAG membantu kanak-kanak membesar menjadi individu yang bertanggungjawab dan berkebolehan."
       ],
       missionTitle: "Setiap anak berhak mendapat pendidikan.",
       missionText: "Misi ini membimbing setiap kelas, makanan, pelajaran kemahiran dan lawatan komuniti.",
@@ -621,7 +621,7 @@ export const translations = {
       donateCta: "我要捐款"
     },
     stats: [
-      { value: "728", label: "2023 年受惠学生" },
+      { value: "877", label: "2026 年受惠学生" },
       { value: "70%", label: "学生人数增长" },
       { value: "1st", label: "获教育部注册的无证儿童教育中心" },
       { value: "斗湖", label: "服务沙巴家庭" }
@@ -637,7 +637,7 @@ export const translations = {
       title: "关于恩典训练中心",
       paragraphs: [
         "Pusat Bimbingan Alternatif Grace（PBAG），也称为 Grace Training Centre，位于斗湖 Jalan Apas 5.5 英里。PBAG 于 2015 年 6 月 15 日在布城获马来西亚教育部注册，为难以进入正规学校的无证儿童提供替代教育。",
-        "自成立以来，PBAG 已服务数百名儿童。2023 年，学生人数增长 70%，达到 728 名，仍有许多孩子等待入学。通过教育、技能训练和社区支持，PBAG 帮助孩子成长为有责任感、有能力的人。"
+        "自成立以来，PBAG 已服务数百名儿童。2026 年，PBAG 已帮助 877 名学生，仍有许多孩子等待入学。通过教育、技能训练和社区支持，PBAG 帮助孩子成长为有责任感、有能力的人。"
       ],
       missionTitle: "每个孩子都有受教育的权利。",
       missionText: "这个使命引导每一堂课、每一餐、每一次技能学习和社区服务。",
